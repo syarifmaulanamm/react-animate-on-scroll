@@ -14,7 +14,7 @@ export default class ScrollAnimation extends Component {
     };
 
     this.state = {
-      classes: "animated",
+      classes: "animate__animated animate__",
       style: {
         animationDuration: `${this.props.duration}s`,
         opacity: this.props.initiallyVisible ? 1 : 0
@@ -123,7 +123,7 @@ export default class ScrollAnimation extends Component {
     this.delayedAnimationTimeout = setTimeout(() => {
       this.animating = true;
       this.setState({
-        classes: `animated ${animation}`,
+        classes: `animate__animated animate__${animation}`,
         style: {
           animationDuration: `${this.props.duration}s`
         }
@@ -153,7 +153,7 @@ export default class ScrollAnimation extends Component {
   animateOut(callback) {
     this.animate(this.props.animateOut, () => {
       this.setState({
-        classes: "animated",
+        classes: "animate__animated animate__",
         style: {
           animationDuration: `${this.props.duration}s`,
           opacity: 0
@@ -179,7 +179,7 @@ export default class ScrollAnimation extends Component {
         clearTimeout(this.delayedAnimationTimeout);
         if (!currentVis.onScreen) {
           this.setState({
-            classes: "animated",
+            classes: "animate__animated animate__",
             style: {
               animationDuration: `${this.props.duration}s`,
               opacity: this.props.initiallyVisible ? 1 : 0
